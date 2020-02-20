@@ -23,6 +23,7 @@
 #include<algorithm>
 #include<map>
 #include<set>
+#include<queue>
 using namespace std;
 //struct Less
 //{
@@ -177,7 +178,7 @@ void test_map4()
 	map<string, int> countMap;
 	for (auto str : strs)
 	{
-		countMap[str]++;//为什么
+		countMap[str]++;//为什么//[] 表示可以访问存取元素 当map中没有这个元素时就新建一个key值并且值为1 当有的时候只改变value的值
 	}
 	map<string, int>::iterator  Q = countMap.begin();
 	while (Q != countMap.end())
@@ -186,8 +187,128 @@ void test_map4()
 		Q++;
 	}
 }
-int main()
+void test_map5()
 {
-	test_map4();
+	int arr[4] = { 1,2,3,4};
+	map<int, int> m;
+	m[0] = 2;
+	m[1] = 4;
+	m[2] = 6;
+	m[3] = 8;
+	m[4] = 10;
+	m[2] = 7;
+	m[5];//没有给value的话会调用默认构造函数 value的缺省值是0 int 型是0
+	//而string 缺省值是""空字符串
+	//[] 的返回值是value的引用
+	//m[5]=19;这里是修改
+	//m[5];这里是插入 value是0 因为m[5]不存在
+	m.insert(make_pair(0, 12));//这里的插入修改会失败
+	map<int, int>::iterator ret = m.begin();
+	map<int, int>::iterator set;
+	while (ret != m.end())
+	{
+		cout << ret->first << ":" << ret->second << endl;
+		ret++;
+	}
+	cout << endl;
+}
+//void test_map()
+//{
+//	map<string, int>M;
+//	int map_type = 0;
+//	string k;
+//	M.insert((make_pair(k, map_type)));
+	//make_pair可以自动识别里面的参数的类型
+	//mapped_type&operator[](const key_type&k)
+	//{
+		//return (*(this->insert(make_pair(k, mapped_type)))).first)).second;
+		//返回容器中keyy对应的value值的引用
+		//两层含义如果这个key在map中的话：a 找key映射的value  修改key的映射
+		//如果key不在容器中的话 插入make_pair(key,value());  依旧会返回value的引用->且可以对value的值进行修改
+		//因为find 只能返回key在的情况 但是当key不在的时候就会出现问题
+	//}
+//}
+void GetFavoriteFruit1(const vector<string>& fruits, size_t k)
+{
+	//范围 for 只要支持迭代器就可以使用 范围for 
+	map<string, int> m;
+	for (auto set : fruits)
+	{
+		m[set]++;
+	}
+	vector<pair<string, int>> e(m.begin(),m.end());
+	for (auto s : m)
+	{
+		e.push_back(s);
+	}
+	sort(e.end(), e.begin());
+	for (int i = 0; i < k; i++)
+	{
+		cout << e[i].first << ":" << e[i].second << endl;
+	}
+}
+//int CountCompare()
+//{
+//
+//}
+//void GetFavoriteFruit2(const vector<string>& fruits, size_t k)
+//{
+//	//范围 for 只要支持迭代器就可以使用 范围for 
+//	map<string, int> m;
+//	for (auto set : fruits)
+//	{
+//		m[set]++;
+//	}
+//	priority_queue < pair<string, int>, vector<pair<string, int>, int CountCompare>> pq;
+//}
+void test_map6()
+{
+	vector<string> fruits = { "西瓜","西瓜","芒果","草莓","西瓜","香蕉","苹果","荔枝","荔枝","芒果","西瓜","梨子","桃子","香蕉","芒果","草莓" };
+	map<string, int> m;
+	map<int, string> p;
+	map<string, int>::iterator b = m.begin();
+	for (auto str : fruits)
+	{
+		m[str]++;
+	}
+	map<string, int>::iterator  F = m.begin();
+	while (F != m.end())
+	{
+		cout << F->first << ":" << F->second << endl;
+		F++;
+	}
+	cout << endl;
+	int k = 3;
+	//GetFavoriteFruit(fruits,k);
+
+
+}
+void test_set2()
+{
+	multiset<int> ms;
+	ms.insert(3);
+	ms.insert(5);
+	ms.insert(3);//允许键值冗余 但是 set是不允许相同的key插入
+	for (auto set : ms)
+	{
+		cout << set << endl;
+	}
+	cout << endl;
+	//map是排序+key去重
+	//反向迭代器
+	//multimap 
+	//map k v 双向迭代器 不支改key 但可以更改 value的值 
+	//set k +双向迭代器 
+}
+void test_set()
+{
+	set<int> s;
+	s[1] = 0;
+	s[2] = 1;
+	s[3] = 4;
+}
+int main()
+{   
+	test_set2();
 	return 0;
 }
