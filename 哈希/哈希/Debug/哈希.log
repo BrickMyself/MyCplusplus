@@ -1,0 +1,3 @@
+﻿  Test.cpp
+c:\users\dell\source\repos\哈希\哈希\test.cpp(34): warning C4244: “参数”: 从“time_t”转换到“unsigned int”，可能丢失数据
+  哈希.vcxproj -> C:\Users\Dell\source\repos\哈希\Debug\哈希.exe

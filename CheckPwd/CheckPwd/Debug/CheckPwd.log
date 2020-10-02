@@ -1,0 +1,4 @@
+﻿  Test.cpp
+c:\users\dell\source\repos\checkpwd\checkpwd\test.cpp(21): warning C4018: “<”: 有符号/无符号不匹配
+c:\users\dell\source\repos\checkpwd\checkpwd\test.cpp(61): warning C4018: “<”: 有符号/无符号不匹配
+  CheckPwd.vcxproj -> C:\Users\Dell\source\repos\CheckPwd\Debug\CheckPwd.exe

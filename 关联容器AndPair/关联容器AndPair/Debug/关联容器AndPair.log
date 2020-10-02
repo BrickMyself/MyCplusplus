@@ -1,0 +1,13 @@
+﻿  Test.cpp
+d:\vs 2017\vc\tools\msvc\14.16.27023\include\utility(303): warning C4244: “=”: 从“_Ty”转换到“_Ty1”，可能丢失数据
+          with
+          [
+              _Ty=double
+          ]
+          and
+          [
+              _Ty1=int
+          ]
+  c:\users\dell\source\repos\关联容器andpair\关联容器andpair\test.cpp(10): note: 参见对正在编译的函数 模板 实例化“std::pair<int,int> &std::pair<int,int>::operator =<double,char,0>(std::pair<double,char> &&) noexcept”的引用
+  c:\users\dell\source\repos\关联容器andpair\关联容器andpair\test.cpp(10): note: 参见对正在编译的函数 模板 实例化“std::pair<int,int> &std::pair<int,int>::operator =<double,char,0>(std::pair<double,char> &&) noexcept”的引用
+  关联容器AndPair.vcxproj -> C:\Users\Dell\source\repos\关联容器AndPair\Debug\关联容器AndPair.exe
